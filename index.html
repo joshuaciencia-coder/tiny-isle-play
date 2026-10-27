@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Tiny Isle</title>
+    <!-- The Playables SDK must load before any game code. -->
+    <script src="https://www.youtube.com/game_api/v1"></script>
+    <script type="module" crossorigin src="./assets/index-CHjpX0Iq.js"></script>
+    <link rel="modulepreload" crossorigin href="./assets/sfx-Bu2nUSVZ.js">
+    <link rel="modulepreload" crossorigin href="./assets/sfx-waves-DpIDKEmP.js">
+    <link rel="modulepreload" crossorigin href="./assets/three-core-Dw0mYIPm.js">
+    <link rel="modulepreload" crossorigin href="./assets/three-BrJ15PZp.js">
+    <link rel="stylesheet" crossorigin href="./assets/index-l3If_VuJ.css">
+  </head>
+  <body>
+    <canvas id="scene" aria-hidden="true"></canvas>
+    <div id="ui">
+      <section id="loading" class="screen" aria-live="polite">
+        <svg class="loading-island" viewBox="0 0 120 60" aria-hidden="true">
+          <ellipse cx="60" cy="44" rx="52" ry="10" class="loading-water" />
+          <path d="M18 42 L38 26 L58 32 L76 20 L102 42 Z" class="loading-land" />
+          <path d="M80 22 L80 8 L88 16 Z" class="loading-sail" />
+        </svg>
+        <div class="progress" role="progressbar" data-i18n-label="loading.label" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+          <div id="progress-fill" class="progress-fill"></div>
+        </div>
+        <p class="tip" data-i18n="loading.tip">Tap trees to gather wood</p>
+      </section>
+
+      <section id="title" class="screen" hidden>
+        <div class="title-card">
+          <h1 data-i18n="app.title">Tiny Isle</h1>
+          <p class="subtitle" data-i18n="title.subtitle">A cozy island builder</p>
+          <button id="continue" class="button button-primary" type="button" data-i18n="title.continue" hidden>Continue</button>
+          <button id="new-island" class="button button-primary" type="button" data-i18n="title.newIsland">New island</button>
+        </div>
+      </section>
+
+      <nav id="camera-controls" class="camera-controls" aria-label="Camera" data-i18n-label="hud.camera" hidden>
+        <button id="rotate-left" class="button button-round" type="button" aria-label="Rotate view left" data-i18n-label="hud.rotateLeft">⟲</button>
+        <button id="build" class="button button-build" type="button" data-i18n="hud.build">Build</button>
+        <button id="rotate-right" class="button button-round" type="button" aria-label="Rotate view right" data-i18n-label="hud.rotateRight">⟳</button>
+      </nav>
+
+      <button id="settings" class="button button-round settings-button" type="button" aria-label="Settings" data-i18n-label="hud.settings" data-i18n-title="hud.settings">⚙</button>
+
+      <div id="game-ui" class="game-ui"></div>
+
+      <p id="dev-badge" class="dev-badge" hidden></p>
+    </div>
+  </body>
+</html>
